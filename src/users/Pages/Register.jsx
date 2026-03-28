@@ -32,7 +32,6 @@ const Register = () => {
           ...formData,
         }
       );
-      console.log("Response:", response.data);
       if(response.data){
         setNotification({ message: response.data.message, variant: "success" });
         setTimeout(() => {

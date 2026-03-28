@@ -35,12 +35,10 @@ const Login = () => {
         `https://msp-backend-cdho.onrender.com/api/user/login?email=${formData.email}&password=${formData.password}`
       );
   
-      console.log("Login Success:", response.data);
   
       const user = response.data.user;
   
       updateUserDetails(user);
-      console.log(user);
   
       // Save user details in sessionStorage
       sessionStorage.setItem("user", JSON.stringify(user));

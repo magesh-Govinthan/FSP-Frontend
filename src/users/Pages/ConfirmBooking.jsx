@@ -13,7 +13,6 @@ const  {event} = useContext(EventContext)
 const {user } = useContext(UserContext);
 const finalUser = JSON.parse(sessionStorage.getItem("user")) || user;
 const navigate = useNavigate();
-console.log(ticket, event, user);
   const ticketDetails = [
     { name: "General", qty: ticket?.qty?.General || 0, pricePerTicket: event?.ticketTypes?.[0]?.price },
     { name: "VIP", qty: ticket?.qty?.VIP || 0, pricePerTicket: event?.ticketTypes?.[1]?.price },

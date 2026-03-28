@@ -14,20 +14,15 @@ import { UserContext } from "../Context/AuthContext"
 
 function View() {
   const { event } = useContext(EventContext);
-  const { user } = useContext(UserContext);
-  console.log(event);
 
   const navigate = useNavigate()
   const handleBack = () => {
     navigate("/")
   }
   const handleTicket = () => {
-      if(Object.keys(user).length === 0){
-     navigate('/login')
-     return
-      }else{
+     
     navigate("/ticket")
-      }
+      
   }
   return (
     <div className="view-head">

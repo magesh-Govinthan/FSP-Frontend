@@ -12,7 +12,6 @@ const PaymentListPage = () => {
     const fetchPayments = async () => {
       try {
         const { data } = await axios.get(`https://msp-backend-cdho.onrender.com/api/payments/user/${user._id}`);
-        console.log("Fetched Payments:", data);
         setPayments(data?.payments || []);
       } catch (err) {
         setError(err.response?.data?.message || err.message || "Failed to fetch payments");

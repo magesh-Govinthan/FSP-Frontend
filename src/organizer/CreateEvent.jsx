@@ -67,7 +67,6 @@ const EventForm = () => {
         },
        
     );
-      console.log("Event Created:", data);
       setEvent(
         {
             eventName: "",
@@ -109,7 +108,6 @@ const EventForm = () => {
         }
       )
       .then((res) => {
-        console.log("Event Updated:", res.data);
       
         setEvent({
           eventName: "",
@@ -145,9 +143,7 @@ const EventForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(Object.keys(event).length );
     if(Object.keys(event).length === 0){
-        console.log("Creating new event...");
         createNewEvent();
         updateEventDetails({}); // clear context after creation
     } else {

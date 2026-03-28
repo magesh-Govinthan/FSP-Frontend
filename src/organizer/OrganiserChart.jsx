@@ -52,7 +52,6 @@ const RevenueCharts = () => {
               }
             );
     
-            console.log("fetchedTickets:", response.data);
     
             setTickets(response.data);
           } catch (err) {
@@ -75,7 +74,6 @@ const RevenueCharts = () => {
 
   });
   const ticketQuantity = tickets.map((ticket) => ticket.quantity);
-  console.log(ticketQuantity)
   const ticketPrice = tickets.map((ticket) => ticket.totalPrice);
 
   const ticketData = {

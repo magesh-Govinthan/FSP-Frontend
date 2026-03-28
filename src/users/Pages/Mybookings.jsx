@@ -24,7 +24,6 @@ function MyBookings() {
           Authorization: `Bearer ${token}`
         }
       }).then((response) => {
-        console.log(response);
         setBookings(response.data);
       }).catch((error) => {
         console.log(error);

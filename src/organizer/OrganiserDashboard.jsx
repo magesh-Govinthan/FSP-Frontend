@@ -31,7 +31,6 @@ const [toastMessage, setToastMessage] = useState("");
             },
           }
         );
-        console.log("Fetched events:", response.data);
         setEvents(response.data);
       } catch (error) {
         console.error("Error fetching events:", error);
@@ -46,7 +45,6 @@ const [toastMessage, setToastMessage] = useState("");
 
   useEffect(() => {
     const fetchTickets = async () => {
-        console.log("events:", events);
     
         if (events.length > 0) {
           const eventIds = events.map((e) => e._id);
@@ -65,7 +63,6 @@ const [toastMessage, setToastMessage] = useState("");
               }
             );
     
-            console.log("fetchedTickets:", response.data);
     
             setTickets(response.data);
           } catch (err) {
