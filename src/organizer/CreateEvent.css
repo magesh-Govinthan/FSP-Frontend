@@ -1,0 +1,12 @@
+.custom-input::placeholder {
+    color: #ffffff !important;
+    opacity: 1;
+  }
+  
+  .custom-input::-ms-input-placeholder {
+    color: #ffffff;
+  }
+  
+  .custom-input::-webkit-input-placeholder {
+    color: #ffffff;
+  }

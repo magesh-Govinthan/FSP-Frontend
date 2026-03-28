@@ -1,0 +1,28 @@
+.sidebar-link {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #000 !important;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  /* Icons same size */
+  .sidebar-link svg {
+    font-size: 18px;
+  }
+  
+  /* Hover effect */
+  .sidebar-link:hover {
+    background: #e9ecef;
+    font-weight: 500;
+  }
+  
+  /* Active link */
+  .active-link {
+    background: #e9ecef;
+    font-weight: 600;
+  }

@@ -1,0 +1,111 @@
+.ticket-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  
+  .ticket-card {
+    width: 320px;
+    background: #f5f1ea;
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+    margin: 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+  
+  /* Ticket cut effect */
+  .ticket-card::before,
+  .ticket-card::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .ticket-card::before {
+    left: -10px;
+  }
+  
+  .ticket-card::after {
+    right: -10px;
+  }
+  
+  .title {
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .subtitle {
+    margin-bottom: 10px;
+  }
+  
+  .ticket-no {
+    font-size: 14px;
+  }
+  
+  .price {
+    margin: 10px 0;
+    font-weight: 500;
+  }
+  
+  .qty-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+  }
+  
+  .qty {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  
+  .sell-btn {
+    background-color: #e76f51;
+    border: none;
+  }
+  .summary-box {
+    background: #f5f5f5;
+    padding: 16px;
+    border-radius: 8px;
+    max-width: 650px;
+    margin-top: 40px;
+    
+    
+    
+  }
+  
+  .row-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    flex-wrap: nowrap;
+  }
+  
+  .total {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .pay-btn {
+    width: 100%;
+    margin-top: 15px;
+    background: purple;
+    color: white;
+    border: none;
+  }
