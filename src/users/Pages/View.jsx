@@ -8,7 +8,6 @@ import {  FaCoffee, FaMagic} from "react-icons/fa"
 import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { EventContext } from "../Context/EventContext"
-import { UserContext } from "../Context/AuthContext"
 
 
 

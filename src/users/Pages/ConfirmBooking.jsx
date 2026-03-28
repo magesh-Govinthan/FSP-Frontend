@@ -20,7 +20,7 @@ const navigate = useNavigate();
   const filteredTickets = ticketDetails.filter((t) => t.qty > 0);
 
   const onPay = () => {
-    if(Object.keys(user).length === 0){
+    if(Object.keys(user).length !== 0){
      navigate('/login')
      return
     }
