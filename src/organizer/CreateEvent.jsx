@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import './Createevent.css'
 import { EventContext } from "../users/Context/EventContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
