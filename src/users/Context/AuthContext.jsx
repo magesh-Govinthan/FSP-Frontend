@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 const ACTION = {
   SET_USER_DETAILS: "SET_USER_DETAILS",
@@ -23,6 +23,15 @@ export const UserContext = createContext({
 
 export const UserProvider = ({ children }) => {
   const [{user}, dispatch] = useReducer(userReducer, initState);
+  useEffect(()=>{
+    const userData=sessionStorage.getItem("user")
+    if(userData){
+          dispatch({
+            type: "SET_USER_DETAILS",
+            payload: { user: JSON.parse(userData) },
+          });
+    }
+  })
   const updateUserDetails = (user) => {
     console.log(user);
     const payload = {
