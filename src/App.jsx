@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header from "./users/Compontent/Header";
 import Home from "./users/Pages/Home";
 import View from "./users/Pages/View";
@@ -23,13 +23,12 @@ import UsersTable from "./admin/adminUsers";
 import TicketTable from "./admin/adminTicket";
 import AdminPayments from "./admin/adminPayments";
 import AdminReviews from "./admin/adminReview";
+import { UserContext } from "./users/Context/AuthContext";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const {user}=useContext(UserContext)
   // const user = JSON.parse(sessionStorage.getItem("user"));
-  useEffect(()=>{
-   setUser(JSON.stringify(sessionStorage.getItem("user")));
-  },[])
+
   console.log(user);
   return (
     <div>
