@@ -30,7 +30,7 @@ function App() {
   useEffect(()=>{
    setUser(JSON.parse(sessionStorage.getItem("user")));
   },[])
-  console.log(user);
+  console.log(user.role);
   return (
     <div>
       <Header />
