@@ -29,7 +29,6 @@ function App() {
   const {user}=useContext(UserContext)
   // const user = JSON.parse(sessionStorage.getItem("user"));
 
-  console.log(user);
   return (
     <div>
       <Header />

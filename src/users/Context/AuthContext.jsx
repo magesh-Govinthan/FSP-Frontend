@@ -33,7 +33,6 @@ export const UserProvider = ({ children }) => {
     }
   },[])
   const updateUserDetails = (user) => {
-    console.log(user);
     const payload = {
       user,
     };
