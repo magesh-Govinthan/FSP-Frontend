@@ -31,7 +31,7 @@ export const UserProvider = ({ children }) => {
             payload: { user: JSON.parse(userData) },
           });
     }
-  })
+  },[])
   const updateUserDetails = (user) => {
     console.log(user);
     const payload = {
