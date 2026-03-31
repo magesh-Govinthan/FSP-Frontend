@@ -61,7 +61,7 @@ const UsersTable = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://msp-backend-cdho.onrender.com/api/user/${id}`,
+        `https://msp-backend-cdho.onrender.com/api/user/delete/${id}`,
       );
       setUsers(users.filter((u) => u._id !== id));
     } catch (error) {
