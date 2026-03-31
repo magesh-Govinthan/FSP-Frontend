@@ -28,7 +28,7 @@ function App() {
   const [user, setUser] = useState(null);
   // const user = JSON.parse(sessionStorage.getItem("user"));
   useEffect(()=>{
-   setUser(JSON.parse(sessionStorage.getItem("user")));
+   setUser(JSON.stringify(sessionStorage.getItem("user")));
   },[])
   console.log(user.role);
   return (
