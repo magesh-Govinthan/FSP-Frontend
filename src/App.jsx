@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./users/Compontent/Header";
 import Home from "./users/Pages/Home";
 import View from "./users/Pages/View";
@@ -25,7 +25,8 @@ import AdminPayments from "./admin/adminPayments";
 import AdminReviews from "./admin/adminReview";
 
 function App() {
-  const user = JSON.parse(sessionStorage.getItem("user"));
+  const [user, setUser] = useState(JSON.parse(sessionStorage.getItem("user")));
+  // const user = JSON.parse(sessionStorage.getItem("user"));
   console.log(user);
   return (
     <div>
