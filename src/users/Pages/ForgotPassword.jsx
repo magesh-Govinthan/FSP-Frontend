@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Card, Container, Row, Col, Alert } from "react-bootstrap";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -70,7 +71,9 @@ const ForgotPassword = () => {
               </Form>
 
               <div className="text-center mt-3">
-                <small>Remembered your password? Login</small>
+                <small>
+                  Remembered your password? <Link to="/login">Login</Link>
+                </small>
               </div>
             </Card.Body>
           </Card>
