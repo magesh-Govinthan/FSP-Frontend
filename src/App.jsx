@@ -51,9 +51,9 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
         <Route path="/profile" element={<UserProfile />} />
-        {user && user.role === "user" && (
+        
           <Route path="/confirm-booking" element={<ConfirmBooking />} />
-        )}
+        
         {user && user.role === "user" && (
           <Route path="/my-bookings" element={<MyBookings />} />
         )}
