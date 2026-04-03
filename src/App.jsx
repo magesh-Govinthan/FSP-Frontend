@@ -54,9 +54,9 @@ function App() {
         {user && user.role === "user" && (
           <Route path="/confirm-booking" element={<ConfirmBooking />} />
         )}
-        {user && user.role === "user" && (
+       
           <Route path="/my-bookings" element={<MyBookings />} />
-        )}
+        
         {user && user.role === "user" && (
           <Route path="/payment-info" element={<PaymentListPage />} />
         )}
