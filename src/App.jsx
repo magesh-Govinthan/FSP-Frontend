@@ -35,9 +35,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/view" element={<View />} />
-        {user && user.role === "user" && (
+        
           <Route path="/ticket" element={<Ticket />} />
-        )}
+      
         {user && user.role === "user" && (
           <Route path="/success" element={<PaymentSuccess />} />
         )}
@@ -54,9 +54,9 @@ function App() {
         {user && user.role === "user" && (
           <Route path="/confirm-booking" element={<ConfirmBooking />} />
         )}
-       
+        {user && user.role === "user" && (
           <Route path="/my-bookings" element={<MyBookings />} />
-        
+        )}
         {user && user.role === "user" && (
           <Route path="/payment-info" element={<PaymentListPage />} />
         )}
