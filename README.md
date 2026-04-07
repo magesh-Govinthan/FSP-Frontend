@@ -1,4 +1,4 @@
-# 🎟️ Event Management Platform – Frontend
+# 🎟️ Online Event Management Platform – Frontend
 
 This is the **frontend application** for the Online Event Management Platform built using **React.js, Vite, and react-bootstrap**.
 The application allows users to browse events, purchase tickets, and manage registrations while providing dashboards for organizers and administrators.
