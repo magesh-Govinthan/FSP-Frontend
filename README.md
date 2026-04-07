@@ -71,29 +71,135 @@ Password: mahi1234
 Email: add@gmail.com
 Password:pal
 
-# 📂 Project Structure
+## 📂 Frontend Project Structure
 
 ```
-src
+FSP-FRONTEND
 │
-├── admin
-│   ├── adminDashboard.jsx
-│   ├── adminPayments.jsx
-│   ├── adminReview.jsx
-│   ├── adminTicket.jsx
-│   └── adminUsers.jsx
+├── node_modules
+├── public
 │
-├── organizer
-│   ├── CreateEvent.jsx
-│   ├── OrganiserDashboard.jsx
-│   └── OrganiserChart.jsx
+├── src
+│   │
+│   ├── admin
+│   │   ├── adminDashboard.css
+│   │   ├── adminDashBoard.jsx
+│   │   ├── adminPayments.jsx
+│   │   ├── adminReview.jsx
+│   │   ├── adminTicket.jsx
+│   │   └── adminUsers.jsx
+│   │
+│   ├── organizer
+│   │   ├── CreateEvent.css
+│   │   ├── CreateEvent.jsx
+│   │   ├── OrganiserChart.jsx
+│   │   └── OrganiserDashboard.jsx
+│   │
+│   ├── users
+│   │
+│   ├── Component
+│   │   ├── Header.css
+│   │   └── Header.jsx
+│   │
+│   ├── Context
+│   │   ├── AuthContext.jsx
+│   │   ├── EventContext.jsx
+│   │   └── TicketContext.jsx
+│   │
+│   ├── Pages
+│   │   ├── ConfirmBooking.jsx
+│   │   ├── Failed.jsx
+│   │   ├── ForgotPassword.jsx
+│   │   ├── Home.css
+│   │   ├── Home.jsx
+│   │   ├── Login.jsx
+│   │   ├── MyBookings.jsx
+│   │   ├── NotFound.jsx
+│   │   ├── PaymentDetails.jsx
+│   │   ├── Register.jsx
+│   │   ├── ResetPassword.jsx
+│   │   ├── Success.css
+│   │   ├── Success.jsx
+│   │   ├── Ticket.css
+│   │   ├── Ticket.jsx
+│   │   ├── useProfileIcon.jsx
+│   │   ├── userProfile.jsx
+│   │   ├── View.css
+│   │   └── View.jsx
+│   │
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
 │
-├── users
-│
-├── App.jsx
-├── main.jsx
-└── styles
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+├── vercel.json
+└── vite.config.js
 ```
+
+---
+
+## 🧱 Frontend Architecture
+
+The frontend follows a **modular React architecture**.
+
+### Admin Module
+
+Handles:
+
+* Event management
+* User management
+* Payment monitoring
+* Ticket management
+* Review moderation
+
+### Organizer Module
+
+Allows organizers to:
+
+* Create events
+* Manage event details
+* View event analytics
+
+### User Module
+
+Users can:
+
+* Register and login
+* Browse events
+* Book tickets
+* View booking history
+
+### Context API
+
+Global state management using:
+
+* `AuthContext` → User authentication
+* `EventContext` → Event data management
+* `TicketContext` → Ticket booking state
+
+### Components
+
+Reusable UI components like:
+
+* Header
+* Navigation
+
+### Pages
+
+Contains all application pages like:
+
+* Home
+* Login
+* Register
+* Ticket booking
+* Payment success/failure
+* User profile
 
 ---
 
