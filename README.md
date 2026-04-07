@@ -211,12 +211,6 @@ Contains all application pages like:
 git clone https://github.com/magesh-Govinthan/FSP-Frontend.git
 ```
 
-### Navigate to project
-
-```bash
-cd event-management-frontend
-```
-
 ### Install dependencies
 
 ```bash
