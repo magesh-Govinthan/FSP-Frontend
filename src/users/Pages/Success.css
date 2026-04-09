@@ -1,115 +1,210 @@
+
+
+
+/* Payment Success Section */
+
 .checkmark {
-    stroke-width: 3;
-    stroke: #4BB543;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-    animation: scaleIn 0.6s ease forwards;
+  animation: scaleIn 0.5s ease-in-out;
+}
+
+.checkmark-circle {
+  stroke: #28a745;
+  stroke-width: 2;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: stroke 0.6s ease forwards;
+}
+
+.checkmark-check {
+  stroke: #28a745;
+  stroke-width: 3;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.4s 0.6s ease forwards;
+}
+
+@keyframes stroke {
+  to {
+    stroke-dashoffset: 0;
   }
-  
-  .checkmark-circle {
-    stroke-dasharray: 157;
-    stroke-dashoffset: 157;
-    animation: circleDraw 0.8s ease forwards;
-  }
-  
-  .checkmark-check {
-    stroke-dasharray: 48;
-    stroke-dashoffset: 48;
-    animation: checkDraw 0.8s 0.8s ease forwards;
-  }
-  
-  .fail-cross {
-    stroke-width: 3;
-    stroke: #D9534F;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-    animation: scaleInFail 0.6s ease forwards;
-  }
-  
-  .fail-circle {
-    stroke-dasharray: 157;
-    stroke-dashoffset: 157;
-    animation: circleDrawFail 0.8s ease forwards;
-  }
-  
-  .fail-line {
-    stroke-dasharray: 29;
-    stroke-dashoffset: 29;
-    animation: lineDrawFail 0.8s 0.8s ease forwards;
-  }
-  
-  @keyframes scaleIn {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes circleDraw {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  
-  @keyframes checkDraw {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  
-  @keyframes scaleInFail {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes circleDrawFail {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  
-  @keyframes lineDrawFail {
-    to {
-      stroke-dashoffset: 0;
-    }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
   }
 
-  .success-toast {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #28a745;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: 500;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  
-    animation: slideFade 0.5s ease, fadeOut 0.5s ease 2.5s forwards;
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  @keyframes slideFade {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+}
+
+
+/* Review Container */
+
+.holi-5 {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 35px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.holi-5:hover {
+  transform: translateY(-4px);
+}
+
+
+/* Reviews Title */
+
+.holi-5 h3 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+
+/* Rating Stars */
+
+.holi-5 span {
+  transition: all 0.2s ease;
+}
+
+.holi-5 span:hover {
+  transform: scale(1.25);
+}
+
+
+/* Name Input */
+
+.holi-5 input[type="text"] {
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.holi-5 input[type="text"]:focus {
+  border-color: #0dcaf0;
+  box-shadow: 0 0 10px rgba(13, 202, 240, 0.3);
+  outline: none;
+}
+
+
+/* Comment Input */
+
+.input-group input {
+  border-radius: 10px 0 0 10px;
+  padding: 14px;
+  border: 1px solid #ddd;
+}
+
+
+/* Submit Button */
+
+.input-group button {
+  border-radius: 0 10px 10px 0;
+  width: 70px;
+  background: #dc3545;
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.input-group button:hover {
+  background: #b02a37;
+  transform: scale(1.05);
+}
+
+
+/* Success Toast */
+
+.success-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.4s ease;
+  z-index: 999;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(200px);
+    opacity: 0;
   }
-  
-  @keyframes fadeOut {
-    to {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
+}
+
+
+/* Back Button */
+
+button.btn-info {
+  border-radius: 25px;
+  padding: 10px 28px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+button.btn-info:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Responsive */
+
+@media (max-width:992px) {
+
+  .holi-5 {
+    width: 95% !important;
+  }
+
+}
+
+
+@media (max-width:768px) {
+
+  .holi-5 {
+    padding: 25px;
+  }
+
+  .input-group button {
+    width: 60px;
+  }
+
+  button.btn-info {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width:480px) {
+
+  .holi-5 {
+    padding: 20px;
+  }
+
+  .holi-5 h3 {
+    font-size: 20px;
+  }
+
+  .input-group input {
+    font-size: 14px;
+  }
+
+}
