@@ -324,9 +324,10 @@ return (
         variant="outline-light"
         size="sm"
         onClick={addTicket}
-        className="mt-2"
+        style={{ marginTop: "5px" }}
       >
-        + Add Ticket
+        {" "}
+        + Add Ticket{" "}
       </Button>
 
       {/* Other Info */}
