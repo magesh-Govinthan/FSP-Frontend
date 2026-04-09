@@ -197,7 +197,7 @@ const OrganiserDashboard = () => {
           <h3 className="m-0">Organizer Dashboard</h3>
 
           <FaChartBar
-            style={{ width: "28px", height: "28px", cursor: "pointer" }}
+            style={{ width: "28px", height: "28px", cursor: "pointer" , margin:"0"}}
             onClick={handleRevenue}
           />
         </div>
