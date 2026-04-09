@@ -212,6 +212,7 @@ return (
             <Form.Control
               type="date"
               name="date"
+              className="custom-input"
               value={events.date}
               onChange={handleChange}
               style={inputStyle}
@@ -224,6 +225,7 @@ return (
             <Form.Label>Time</Form.Label>
             <Form.Control
               name="time"
+              className="custom-input"
               value={events.time}
               onChange={handleChange}
               placeholder="10:00 AM"
@@ -238,6 +240,7 @@ return (
         <Form.Label>Location</Form.Label>
         <Form.Control
           name="location"
+          className="custom-input"
           value={events.location}
           onChange={handleChange}
           placeholder="Enter location"
@@ -250,6 +253,7 @@ return (
         <Form.Label>Venue</Form.Label>
         <Form.Control
           name="venue"
+          className="custom-input"
           value={events.venue}
           onChange={handleChange}
           placeholder="Enter venue"
@@ -263,6 +267,7 @@ return (
         <Form.Control
           type="number"
           name="Totalticket"
+          className="custom-input"
           value={events.Totalticket}
           onChange={handleChange}
           placeholder="Enter total tickets"
@@ -278,6 +283,7 @@ return (
           <Col xs={12} md={4}>
             <Form.Control
               placeholder="Ticket Name"
+              className="custom-input"
               value={ticket.ticketName}
               onChange={(e) =>
                 handleTicketChange(index, "ticketName", e.target.value)
@@ -290,6 +296,7 @@ return (
             <Form.Control
               type="number"
               placeholder="Price"
+              className="custom-input"
               value={ticket.price}
               onChange={(e) =>
                 handleTicketChange(index, "price", e.target.value)
@@ -302,6 +309,7 @@ return (
             <Form.Control
               type="number"
               placeholder="Available"
+              className="custom-input"
               value={ticket.availableTickets}
               onChange={(e) =>
                 handleTicketChange(index, "availableTickets", e.target.value)
@@ -329,6 +337,7 @@ return (
         <Form.Control
           name="starGuest"
           value={events.starGuest}
+          className="custom-input"
           onChange={handleChange}
           placeholder="Enter guest name"
           style={inputStyle}
@@ -340,6 +349,7 @@ return (
         <Form.Control
           name="whatNew"
           value={events.whatNew}
+          className="custom-input"
           onChange={handleChange}
           placeholder="Enter what’s new"
           style={inputStyle}
@@ -351,6 +361,7 @@ return (
         <Form.Control
           name="specialFor"
           value={events.specialFor}
+          className="custom-input"
           onChange={handleChange}
           placeholder="Enter special for"
           style={inputStyle}
@@ -362,6 +373,7 @@ return (
         <Form.Control
           name="facility"
           value={events.facility}
+          className="custom-input"
           onChange={handleChange}
           placeholder="Enter facility"
           style={inputStyle}
@@ -372,6 +384,7 @@ return (
         <Form.Label>New Features</Form.Label>
         <Form.Control
           value={events.newFeatures.join(", ")}
+          className="custom-input"
           onChange={(e) =>
             setEvent({
               ...events,
@@ -387,6 +400,7 @@ return (
         <Form.Label>Special Features</Form.Label>
         <Form.Control
           value={events.specialFeatures.join(", ")}
+          className="custom-input"
           onChange={(e) =>
             setEvent({
               ...events,
@@ -403,6 +417,7 @@ return (
         <Form.Label>Event Image URL</Form.Label>
         <Form.Control
           name="eventImage"
+          className="custom-input"
           value={events.eventImage}
           onChange={handleChange}
           placeholder="Paste image URL"
@@ -417,6 +432,7 @@ return (
           as="textarea"
           rows={3}
           name="eventInformation"
+          className="custom-input"
           value={events.eventInformation}
           onChange={handleChange}
           placeholder="Write about the event..."
