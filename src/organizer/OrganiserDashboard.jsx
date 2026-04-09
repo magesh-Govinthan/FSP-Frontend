@@ -211,7 +211,7 @@ const OrganiserDashboard = () => {
         <Row className="mb-4">
           <Col lg={4} md={6} sm={12} className="mb-3">
             <Card>
-              <Card.Body className="d-flex flex-column justify-content-between align-items-center">
+              <Card.Body className="d-flex flex-column justify-content-between align-items-center text-center">
                 <h6>Total Events</h6>
                 <h3>{totalEvents}</h3>
               </Card.Body>
@@ -220,7 +220,7 @@ const OrganiserDashboard = () => {
 
           <Col lg={4} md={6} sm={12} className="mb-3">
             <Card>
-              <Card.Body className="d-flex flex-column justify-content-between align-items-center">
+              <Card.Body className="d-flex flex-column justify-content-between align-items-center text-center">
                 <h6>Total Tickets</h6>
                 <h3>{totalTickets}</h3>
               </Card.Body>
@@ -229,7 +229,7 @@ const OrganiserDashboard = () => {
 
           <Col lg={4} md={6} sm={12} className="mb-3">
             <Card>
-              <Card.Body className="d-flex flex-column justify-content-between align-items-center">
+              <Card.Body className="d-flex flex-column justify-content-between align-items-center text-center">
                 <h6>Approved Events</h6>
                 <h3>{approvedEvents}</h3>
               </Card.Body>
@@ -238,7 +238,7 @@ const OrganiserDashboard = () => {
 
           <Col lg={4} md={6} sm={12} className="mb-3">
             <Card>
-              <Card.Body className="d-flex flex-column justify-content-between align-items-center">
+              <Card.Body className="d-flex flex-column justify-content-between align-items-center text-center">
                 <h6>Available Tickets</h6>
                 <h3>{availableTickets}</h3>
               </Card.Body>
@@ -247,7 +247,7 @@ const OrganiserDashboard = () => {
 
           <Col lg={4} md={6} sm={12} className="mb-3">
             <Card>
-              <Card.Body className="d-flex flex-column justify-content-between align-items-center">
+              <Card.Body className="d-flex flex-column justify-content-between align-items-center text-center">
                 <h6>Ticket Sales</h6>
                 <h3>{ticketSales}</h3>
               </Card.Body>
@@ -256,7 +256,7 @@ const OrganiserDashboard = () => {
 
           <Col lg={4} md={6} sm={12} className="mb-3">
             <Card>
-              <Card.Body className="d-flex flex-column justify-content-between align-items-center">
+              <Card.Body className="d-flex flex-column justify-content-between align-items-center text-center">
                 <h6>Revenue</h6>
                 <h3>${revenue}</h3>
               </Card.Body>
