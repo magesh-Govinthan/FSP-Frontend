@@ -72,7 +72,7 @@ const UpdateuserCredentials = async (updatedUser) => {
     }
 
     return (
-        <>
+        < div className="body">
             {islogin && (<Container className="mt-5 d-flex justify-content-center">
                 
                 <Card style={{ width: "400px" }} className="shadow-sm p-4">
@@ -168,7 +168,7 @@ const UpdateuserCredentials = async (updatedUser) => {
                 </Card>
             </Container>)
             }
-        </>
+        </div>
     );
 };
 
