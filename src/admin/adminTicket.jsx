@@ -124,7 +124,7 @@ const TicketTable = () => {
       {/* Total Sales Card */}
       <Row className="mb-4 g-3">
         <Col xs={12} md={4}>
-          <Card className="shadow-sm border-0">
+          <Card className="shadow-sm border-0 m-0">
             <Card.Body>
               <h6 className="text-muted">Total Ticket Sales</h6>
               <h3 className="fw-bold">{totalSales}</h3>
