@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Card, Button, Form, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import "./UserProfile.css";
 import axios from "axios";
 
 const UserProfile = () => {
