@@ -1,15 +1,13 @@
 
 
-/* Card Styling */
-.card {
+.user-profile-page .card {
     border-radius: 18px !important;
     border: none !important;
     transition: all 0.35s ease;
     animation: fadeSlide 0.8s ease;
 }
 
-/* Card Hover */
-.card:hover {
+.user-profile-page .card:hover {
     transform: translateY(-8px);
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15) !important;
 }

@@ -72,11 +72,14 @@ const UpdateuserCredentials = async (updatedUser) => {
     }
 
     return (
-        <>
-            {islogin && (<Container className="mt-5 d-flex justify-content-center">
-                
-                <Card style={{ width: "400px" }} className="shadow-sm p-4">
-                {notification.message && (
+      <>
+        {islogin && (
+          <Container className="mt-5 d-flex justify-content-center">
+            <Card
+              style={{ width: "400px" }}
+              className="shadow-sm p-4 user-profile-page"
+            >
+              {notification.message && (
                 <Alert
                   variant={notification.variant}
                   onClose={() => setNotification({ message: "", variant: "" })}
@@ -85,90 +88,104 @@ const UpdateuserCredentials = async (updatedUser) => {
                   {notification.message}
                 </Alert>
               )}
-                    {/* Profile Circle */}
-                    <div className="text-center mb-4">
-                        <div
-                            style={{
-                                width: "70px",
-                                height: "70px",
-                                borderRadius: "50%",
-                                backgroundColor: "#0d6efd",
-                                color: "#fff",
-                                fontSize: "26px",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                margin: "auto",
-                            }}
-                        >
-                            {user.name.charAt(0)}
-                        </div>
-                    </div>
+              {/* Profile Circle */}
+              <div className="text-center mb-4">
+                <div
+                  style={{
+                    width: "70px",
+                    height: "70px",
+                    borderRadius: "50%",
+                    backgroundColor: "#0d6efd",
+                    color: "#fff",
+                    fontSize: "26px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "auto",
+                  }}
+                >
+                  {user.name.charAt(0)}
+                </div>
+              </div>
 
-                    {/* VIEW MODE */}
-                    {!isEditing ? (
-                        <>
-                            <p><strong>Name:</strong> {user.name}</p>
-                            <p><strong>Email:</strong> {user.email}</p>
-                            <p><strong>Phone:</strong> {user.phone}</p>
+              {/* VIEW MODE */}
+              {!isEditing ? (
+                <>
+                  <p>
+                    <strong>Name:</strong> {user.name}
+                  </p>
+                  <p>
+                    <strong>Email:</strong> {user.email}
+                  </p>
+                  <p>
+                    <strong>Phone:</strong> {user.phone}
+                  </p>
 
-                            <div className="text-center mx-4">
-                                <Button variant="primary" onClick={handleEdit}>
-                                    Edit Profile
-                                </Button>
+                  <div className="text-center mx-4">
+                    <Button variant="primary" onClick={handleEdit}>
+                      Edit Profile
+                    </Button>
 
-                                <Button variant="danger" onClick={handleLogout} className="ms-3">
-                                    Log out
-                                </Button>
-                            </div>
-                        </>
-                    ) : (
-                        /* EDIT MODE (FORM) */
-                        <Form>
-                            <Form.Group className="mb-3">
-                                <Form.Label>Name</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="name"
-                                    value={tempUser.name}
-                                    onChange={handleChange}
-                                />
-                            </Form.Group>
+                    <Button
+                      variant="danger"
+                      onClick={handleLogout}
+                      className="ms-3"
+                    >
+                      Log out
+                    </Button>
+                  </div>
+                </>
+              ) : (
+                /* EDIT MODE (FORM) */
+                <Form>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="name"
+                      value={tempUser.name}
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
 
-                            <Form.Group className="mb-3">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control
-                                    type="email"
-                                    name="email"
-                                    value={tempUser.email}
-                                    onChange={handleChange}
-                                />
-                            </Form.Group>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      name="email"
+                      value={tempUser.email}
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
 
-                            <Form.Group className="mb-3">
-                                <Form.Label>Phone</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="phone"
-                                    value={tempUser.phone}
-                                    onChange={handleChange}
-                                />
-                            </Form.Group>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Phone</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="phone"
+                      value={tempUser.phone}
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
 
-                            <div className="text-center">
-                                <Button variant="success" className="me-2" onClick={handleSave}>
-                                    Save
-                                </Button>
-                                <Button variant="secondary" onClick={handleCancel}>
-                                    Cancel
-                                </Button>
-                            </div>
-                        </Form>
-                    )}
-                </Card>
-            </Container>)
-            }
-        </>
+                  <div className="text-center">
+                    <Button
+                      variant="success"
+                      className="me-2"
+                      onClick={handleSave}
+                    >
+                      Save
+                    </Button>
+                    <Button variant="secondary" onClick={handleCancel}>
+                      Cancel
+                    </Button>
+                  </div>
+                </Form>
+              )}
+            </Card>
+          </Container>
+        )}
+      </>
     );
 };
 
