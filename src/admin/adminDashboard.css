@@ -26,3 +26,70 @@
     background: #e9ecef;
     font-weight: 600;
   }
+
+    /* ============================= */
+    /* Tablet Devices */
+    /* ============================= */
+  
+    @media (max-width: 992px) {
+  
+      .sidebar-link {
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+      }
+  
+      .sidebar-link svg {
+        font-size: 16px;
+      }
+  
+    }
+  
+    /* ============================= */
+    /* Mobile Devices */
+    /* ============================= */
+  
+    @media (max-width: 768px) {
+  
+      .sidebar-link {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 8px;
+      }
+  
+      .sidebar-link svg {
+        font-size: 16px;
+      }
+  
+      .user-profile-page div {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 22px !important;
+      }
+  
+    }
+  
+    /* ============================= */
+    /* Small Mobile Devices */
+    /* ============================= */
+  
+    @media (max-width: 480px) {
+  
+      .sidebar-link {
+        font-size: 14px;
+        gap: 6px;
+        padding: 6px;
+      }
+  
+      .sidebar-link svg {
+        font-size: 15px;
+      }
+  
+      .user-profile-page div {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 20px !important;
+      }
+  
+    }
