@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Container, Card, Button, Form, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import "./UserProfile.css";
 import axios from "axios";
 
 const UserProfile = () => {
@@ -72,7 +71,7 @@ const UpdateuserCredentials = async (updatedUser) => {
     }
 
     return (
-        < >
+        <>
             {islogin && (<Container className="mt-5 d-flex justify-content-center">
                 
                 <Card style={{ width: "400px" }} className="shadow-sm p-4">
