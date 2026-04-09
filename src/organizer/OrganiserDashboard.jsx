@@ -197,14 +197,24 @@ const OrganiserDashboard = () => {
           <h3 className="m-0">Organizer Dashboard</h3>
 
           <FaChartBar
-            style={{ width: "28px", height: "28px", cursor: "pointer" , margin:"0"}}
+            style={{
+              width: "28px",
+              height: "28px",
+              cursor: "pointer",
+              margin: "0",
+            }}
             onClick={handleRevenue}
           />
         </div>
 
         {/* Stats */}
         <Row className="mb-4">
-          <Col lg={4} md={6} sm={12} className="mb-3">
+          <Col
+            lg={4}
+            md={6}
+            sm={12}
+            className="mb-3 d-flex justify-content-between align-items-center"
+          >
             <Card>
               <Card.Body>
                 <h6>Total Events</h6>
@@ -213,7 +223,12 @@ const OrganiserDashboard = () => {
             </Card>
           </Col>
 
-          <Col lg={4} md={6} sm={12} className="mb-3">
+          <Col
+            lg={4}
+            md={6}
+            sm={12}
+            className="mb-3 d-flex justify-content-between align-items-center"
+          >
             <Card>
               <Card.Body>
                 <h6>Total Tickets</h6>
@@ -222,7 +237,12 @@ const OrganiserDashboard = () => {
             </Card>
           </Col>
 
-          <Col lg={4} md={6} sm={12} className="mb-3">
+          <Col
+            lg={4}
+            md={6}
+            sm={12}
+            className="mb-3 d-flex justify-content-between align-items-center"
+          >
             <Card>
               <Card.Body>
                 <h6>Approved Events</h6>
@@ -231,7 +251,12 @@ const OrganiserDashboard = () => {
             </Card>
           </Col>
 
-          <Col lg={4} md={6} sm={12} className="mb-3">
+          <Col
+            lg={4}
+            md={6}
+            sm={12}
+            className="mb-3 d-flex justify-content-between align-items-center"
+          >
             <Card>
               <Card.Body>
                 <h6>Available Tickets</h6>
@@ -240,7 +265,12 @@ const OrganiserDashboard = () => {
             </Card>
           </Col>
 
-          <Col lg={4} md={6} sm={12} className="mb-3">
+          <Col
+            lg={4}
+            md={6}
+            sm={12}
+            className="mb-3 d-flex justify-content-between align-items-center"
+          >
             <Card>
               <Card.Body>
                 <h6>Ticket Sales</h6>
@@ -249,7 +279,12 @@ const OrganiserDashboard = () => {
             </Card>
           </Col>
 
-          <Col lg={4} md={6} sm={12} className="mb-3">
+          <Col
+            lg={4}
+            md={6}
+            sm={12}
+            className="mb-3 d-flex justify-content-between align-items-center"
+          >
             <Card>
               <Card.Body>
                 <h6>Revenue</h6>
