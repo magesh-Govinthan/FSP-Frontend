@@ -40,7 +40,7 @@ const AdminReviews = () => {
       <div className="mb-4 d-flex align-items-center gap-3 flex-wrap">
         <ArrowLeft
           size={22}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", margin: "0" }}
           onClick={() => navigate("/admin-dashboard")}
         />
         <h4 className="m-0">User Reviews</h4>
