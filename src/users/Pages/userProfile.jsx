@@ -75,10 +75,7 @@ const UpdateuserCredentials = async (updatedUser) => {
       <>
         {islogin && (
           <Container className="mt-5 d-flex justify-content-center">
-            <Card
-              style={{ width: "400px" }}
-              className="shadow-sm p-4 user-profile-page"
-            >
+            <Card style={{ width: "400px" }} className="shadow-sm p-4 ">
               {notification.message && (
                 <Alert
                   variant={notification.variant}
@@ -89,7 +86,7 @@ const UpdateuserCredentials = async (updatedUser) => {
                 </Alert>
               )}
               {/* Profile Circle */}
-              <div className="text-center mb-4">
+              <div className="text-center mb-4 user-profile-page">
                 <div
                   style={{
                     width: "70px",
