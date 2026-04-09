@@ -154,9 +154,9 @@ const RevenueCharts = () => {
               style={{ borderRadius: "20px" }}
             >
               <Card.Body>
-                <h5 className="mb-3">Ticket Sales</h5>
+                <h3 className="mb-3">Ticket Sales</h3>
 
-                <div style={{ height: "300px" }}>
+                <div style={{ height: "300px" , width:'100%'}}>
                   <Bar data={ticketData} options={options} />
                 </div>
               </Card.Body>
@@ -169,9 +169,9 @@ const RevenueCharts = () => {
               style={{ borderRadius: "20px" }}
             >
               <Card.Body>
-                <h5 className="mb-3">Event Revenue</h5>
+                <h3 className="mb-3">Event Revenue</h3>
 
-                <div style={{ height: "300px" }}>
+                <div style={{ height: "300px", width:'100%' }}>
                   <Bar data={priceData} options={options} />
                 </div>
               </Card.Body>
