@@ -1,152 +1,115 @@
-/* PAGE BACKGROUND */
-
-.success-container {
-  margin-top: 60px;
-  display: flex;
-  justify-content: center;
-  animation: fadeIn 0.8s ease;
-}
-
-/* CARD */
-
-.success-card {
-  width: 500px;
-  padding: 30px;
-  border-radius: 15px;
-  background: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-}
-
-.success-card:hover {
-  transform: translateY(-5px);
-}
-
-/* TITLE */
-
-.success-title {
-  text-align: center;
-  font-weight: 600;
-}
-
-.success-sub {
-  text-align: center;
-  color: gray;
-}
-
-/* STAR RATING */
-
-.star-rating {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.star {
-  font-size: 32px;
-  color: #ccc;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.star:hover {
-  transform: scale(1.2);
-}
-
-.star.active {
-  color: #ffc107;
-}
-
-/* TEXTAREA */
-
-textarea {
-  border-radius: 10px !important;
-}
-
-/* BUTTON */
-
-.submit-area {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.submit-btn {
-  background: #0d6efd;
-  border: none;
-  border-radius: 25px;
-  padding: 8px 25px;
-  transition: 0.3s;
-}
-
-.submit-btn:hover {
-  transform: scale(1.05);
-}
-
-/* TOAST */
-
-.success-toast {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #198754;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-weight: 500;
-  animation: slideIn 0.5s ease;
-}
-
-/* ANIMATIONS */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+.checkmark {
+    stroke-width: 3;
+    stroke: #4BB543;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    animation: scaleIn 0.6s ease forwards;
+  }
+  
+  .checkmark-circle {
+    stroke-dasharray: 157;
+    stroke-dashoffset: 157;
+    animation: circleDraw 0.8s ease forwards;
+  }
+  
+  .checkmark-check {
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: checkDraw 0.8s 0.8s ease forwards;
+  }
+  
+  .fail-cross {
+    stroke-width: 3;
+    stroke: #D9534F;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    animation: scaleInFail 0.6s ease forwards;
+  }
+  
+  .fail-circle {
+    stroke-dasharray: 157;
+    stroke-dashoffset: 157;
+    animation: circleDrawFail 0.8s ease forwards;
+  }
+  
+  .fail-line {
+    stroke-dasharray: 29;
+    stroke-dashoffset: 29;
+    animation: lineDrawFail 0.8s 0.8s ease forwards;
+  }
+  
+  @keyframes scaleIn {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes circleDraw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes checkDraw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes scaleInFail {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes circleDrawFail {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes lineDrawFail {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .success-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  
+    animation: slideFade 0.5s ease, fadeOut 0.5s ease 2.5s forwards;
   }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
+  
+  @keyframes slideFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
   }
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width:576px) {
-
-  .success-card {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .star {
-    font-size: 26px;
-  }
-
-  .submit-btn {
-    width: 100%;
-  }
-
-}
-
-/* ================= TABLET ================= */
-
-@media (min-width:577px) and (max-width:992px) {
-
-  .success-card {
-    width: 80%;
-  }
-
-}
