@@ -139,7 +139,7 @@ const RevenueCharts = () => {
         {/* Header */}
         <div className="mb-4 d-flex gap-3 align-items-center">
           <ArrowLeft
-            style={{ cursor: "pointer",margin:"0" }}
+            style={{ cursor: "pointer", margin: "0" }}
             onClick={() => navigate(-1)}
           />
 
@@ -156,8 +156,12 @@ const RevenueCharts = () => {
               <Card.Body>
                 <h3 className="mb-3">Ticket Sales</h3>
 
-                <div style={{ height: "300px" , width:'100%'}}>
-                  <Bar data={ticketData} options={options} />
+                <div style={{ height: "300px", width: "100%" }}>
+                  <Bar
+                    style={{ width: "100%", height: "300px" }}
+                    data={ticketData}
+                    options={options}
+                  />
                 </div>
               </Card.Body>
             </Card>
@@ -171,8 +175,12 @@ const RevenueCharts = () => {
               <Card.Body>
                 <h3 className="mb-3">Event Revenue</h3>
 
-                <div style={{ height: "300px", width:'100%' }}>
-                  <Bar data={priceData} options={options} />
+                <div style={{ height: "300px", width: "100%" }}>
+                  <Bar
+                    style={{ width: "100%", height: "300px" }}
+                    data={priceData}
+                    options={options}
+                  />
                 </div>
               </Card.Body>
             </Card>
