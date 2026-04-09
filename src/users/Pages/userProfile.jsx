@@ -72,7 +72,7 @@ const UpdateuserCredentials = async (updatedUser) => {
     }
 
     return (
-        < div >
+        < >
             {islogin && (<Container className="mt-5 d-flex justify-content-center">
                 
                 <Card style={{ width: "400px" }} className="shadow-sm p-4">
