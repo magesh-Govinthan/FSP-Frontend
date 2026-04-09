@@ -1,5 +1,6 @@
-import React from "react";
-import { useState,useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
+
 import {
   Chart as ChartJS,
   LineElement,
@@ -10,11 +11,11 @@ import {
   Legend,
   BarElement,
 } from "chart.js";
+
 import { Bar } from "react-chartjs-2";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react"; // icon
+import { ArrowLeft } from "lucide-react";
 import axios from "axios";
-import { useContext } from "react";
 import { EventContext } from "../users/Context/EventContext";
 
 ChartJS.register(
@@ -24,55 +25,61 @@ ChartJS.register(
   LinearScale,
   PointElement,
   Tooltip,
-  Legend
+  Legend,
 );
 
 const RevenueCharts = () => {
   const navigate = useNavigate();
-  
   const [tickets, setTickets] = useState([]);
- 
- 
-  const { eventIds } = useContext(EventContext); 
+  const { eventIds } = useContext(EventContext);
 
   useEffect(() => {
     const fetchTickets = async () => {
-       
-          
-          try {
-            const token = localStorage.getItem("token");
-    
-            const response = await axios.post(
-              "https://msp-backend-cdho.onrender.com/api/ticket/eventIds",
-              { eventIds },
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-              }
-            );
-    
-    
-            setTickets(response.data);
-          } catch (err) {
-            console.error("Error fetching tickets:", err);
-          }
-        
-      };
-    
-      fetchTickets();
-    }, [])
+      try {
+        const token = localStorage.getItem("token");
 
+        const response = await axios.post(
+          "https://msp-backend-cdho.onrender.com/api/ticket/eventIds",
+          { eventIds },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        );
 
-  
-  const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        setTickets(response.data);
+      } catch (err) {
+        console.error("Error fetching tickets:", err);
+      }
+    };
+
+    fetchTickets();
+  }, []);
+
+  const month = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
   const dateAndMonth = tickets.map((ticket) => {
     const date = new Date(ticket.createdAt);
     const day = date.getDate();
-    const months =  month[date.getMonth()];
-    return `${months} ${day}`;
+    const months = month[date.getMonth()];
 
+    return `${months} ${day}`;
   });
+
   const ticketQuantity = tickets.map((ticket) => ticket.quantity);
   const ticketPrice = tickets.map((ticket) => ticket.totalPrice);
 
@@ -92,7 +99,7 @@ const RevenueCharts = () => {
   };
 
   const priceData = {
-  labels: dateAndMonth,
+    labels: dateAndMonth,
     datasets: [
       {
         label: "Ticket Price ($)",
@@ -123,52 +130,56 @@ const RevenueCharts = () => {
   };
 
   return (
-    <>
-    <div
-      style={{
-        background: "#f5f5f5",
-        minHeight: "100vh",
-        padding: "40px",
-        margin: "auto",
-        maxWidth: "1200px",
-        marginTop: "20px",
-      }}
+    <Container
+      fluid
+      className="py-4"
+      style={{ background: "#f5f5f5", minHeight: "100vh" }}
     >
-      {/* Card */}
-      
+      <Container>
         {/* Header */}
-        <div className=" mb-4 d-flex gap-4 align-items-center" >
+        <div className="mb-4 d-flex gap-3 align-items-center">
           <ArrowLeft
-            style={{ cursor: "pointer", margin:'0' }}
+            style={{ cursor: "pointer",margin:"0" }}
             onClick={() => navigate(-1)}
           />
-          <h2 style={{ margin: 0 }}>Revenue Analytics</h2>
+
+          <h2 className="m-0">Revenue Analytics</h2>
         </div>
 
-        {/* Chart 1 */}
-        <div className=" mb-4 d-flex justify-content-between align-items-center" style={{flexDirection:'column', height:'100%'}}>
-        <div style={{ marginTop: "40px" , width:'100%', background: "#fff",
-          borderRadius: "30px",
-          padding: "30px",
-          
-         }} >
-          <h3>Ticket Sales</h3>
-          <Bar style={{width:'100%', height: '300px'}} data={ticketData} options={options} />
-        </div>
+        {/* Charts */}
+        <Row className="g-4">
+          <Col xs={12}>
+            <Card
+              className="shadow-sm border-0"
+              style={{ borderRadius: "20px" }}
+            >
+              <Card.Body>
+                <h5 className="mb-3">Ticket Sales</h5>
 
-        {/* Chart 2 */}
-        <div style={{ marginTop: "40px" , width:'100%', background: "#fff",
-          borderRadius: "30px",
-          padding: "30px",
-          
-         }} >
-          <h3>Event Revenue</h3>
-          <Bar style={{width:'100%', height: '300px'}} data={priceData} options={options} />
-        </div>
-        </div>
-      </div>
-    
-    </>
+                <div style={{ height: "300px" }}>
+                  <Bar data={ticketData} options={options} />
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          <Col xs={12}>
+            <Card
+              className="shadow-sm border-0"
+              style={{ borderRadius: "20px" }}
+            >
+              <Card.Body>
+                <h5 className="mb-3">Event Revenue</h5>
+
+                <div style={{ height: "300px" }}>
+                  <Bar data={priceData} options={options} />
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </Container>
   );
 };
 
