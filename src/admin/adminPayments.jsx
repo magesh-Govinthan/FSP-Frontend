@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Container, Table, Form, Card, Row, Col, Badge, Button } from "react-bootstrap";
+import {
+  Container,
+  Table,
+  Form,
+  Card,
+  Row,
+  Col,
+  Badge,
+  Button,
+} from "react-bootstrap";
 import axios from "axios";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +23,9 @@ const AdminPayments = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const res = await axios.get("https://msp-backend-cdho.onrender.com/api/event");
+        const res = await axios.get(
+          "https://msp-backend-cdho.onrender.com/api/event",
+        );
         setEvents(res.data);
       } catch (err) {
         console.error(err);
@@ -27,7 +38,9 @@ const AdminPayments = () => {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const res = await axios.get("https://msp-backend-cdho.onrender.com/api/payments/getallpayments");
+        const res = await axios.get(
+          "https://msp-backend-cdho.onrender.com/api/payments/getallpayments",
+        );
         setPayments(res.data.payments);
       } catch (err) {
         console.error(err);
@@ -41,16 +54,20 @@ const AdminPayments = () => {
     ? payments.filter((p) => p.event?._id === selectedEvent)
     : payments;
 
-  // Total revenue (for cards)
-  const totalRevenue = filteredPayments && filteredPayments.reduce((acc, p) => acc + p.amount, 0);
+  // Total revenue
+  const totalRevenue =
+    filteredPayments && filteredPayments.reduce((acc, p) => acc + p.amount, 0);
 
-  // ✅ Delete payment
+  // Delete payment
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this payment?")) return;
+    if (!window.confirm("Are you sure you want to delete this payment?"))
+      return;
 
     try {
-      await axios.delete(`https://msp-backend-cdho.onrender.com/api/payments/${id}`);
-      // Remove deleted payment from state
+      await axios.delete(
+        `https://msp-backend-cdho.onrender.com/api/payments/${id}`,
+      );
+
       setPayments((prev) => prev.filter((p) => p._id !== id));
     } catch (err) {
       console.error(err);
@@ -58,18 +75,19 @@ const AdminPayments = () => {
   };
 
   return (
-    <Container className="mt-4">
-      <div className="mb-4 d-flex gap-4 align-items-center">
+    <Container fluid className="mt-4">
+      {/* Header */}
+      <div className="mb-4 d-flex flex-wrap gap-3 align-items-center">
         <ArrowLeft
           style={{ cursor: "pointer", margin: "0" }}
-          onClick={() => navigate('/admin-dashboard')}
+          onClick={() => navigate("/admin-dashboard")}
         />
-        <h4 style={{ margin: '0' }}>Payment Management</h4>
+        <h4 className="m-0">Payment Management</h4>
       </div>
 
-      {/* Total Revenue Card */}
+      {/* Revenue Card */}
       <Row className="mb-4">
-        <Col md={4} style={{ margin: '0' }}>
+        <Col md={4} sm={12}>
           <Card>
             <Card.Body>
               <h6>Total Revenue</h6>
@@ -79,13 +97,14 @@ const AdminPayments = () => {
         </Col>
       </Row>
 
-      {/* Dropdown to filter events */}
+      {/* Event Filter */}
       <Form.Select
         className="mb-4"
         value={selectedEvent}
         onChange={(e) => setSelectedEvent(e.target.value)}
       >
         <option value="">All Events</option>
+
         {events.map((event) => (
           <option key={event._id} value={event._id}>
             {event.eventName}
@@ -116,32 +135,47 @@ const AdminPayments = () => {
           {filteredPayments.map((p) => (
             <tr key={p._id}>
               <td>{p.user?.name}</td>
-              <td>{p.user?.email}</td>
+
+              <td className="text-break">{p.user?.email}</td>
+
               <td>{p.event?.eventName}</td>
+
               <td>{new Date(p.event?.date).toLocaleDateString()}</td>
+
               <td>
                 General: {p.quantity?.General || 0}, VIP: {p.quantity?.VIP || 0}
               </td>
+
               <td>${p.amount}</td>
+
               <td>{p.currency.toUpperCase()}</td>
+
               <td>
                 <Badge
                   bg={
                     p.status === "paid"
                       ? "success"
                       : p.status === "pending"
-                      ? "warning"
-                      : "danger"
+                        ? "warning"
+                        : "danger"
                   }
                 >
                   {p.status}
                 </Badge>
               </td>
-              <td style={{ wordBreak: "break-all" }}>{p.sessionId}</td>
-              <td style={{ wordBreak: "break-all" }}>{p.paymentIntentId}</td>
+
+              <td className="text-break">{p.sessionId}</td>
+
+              <td className="text-break">{p.paymentIntentId}</td>
+
               <td>{new Date(p.createdAt).toLocaleString()}</td>
+
               <td>
-                <Button variant="danger" size="sm" onClick={() => handleDelete(p._id)}>
+                <Button
+                  variant="danger"
+                  size="sm"
+                  onClick={() => handleDelete(p._id)}
+                >
                   Delete
                 </Button>
               </td>
