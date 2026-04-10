@@ -4,7 +4,6 @@
    box-sizing: border-box;
 }
 
-/* HEADER CONTAINER */
 .parent-head {
    width: 100%;
    padding: 10px 20px;
@@ -13,25 +12,27 @@
    border-radius: 7px;
 }
 
-/* GRID LAYOUT */
 .head-containter {
    display: grid;
-   grid-template-columns: 1fr 2fr 1fr;
-   align-items: center;
+   grid-template-columns: 1fr 2fr;
+   grid-template-rows: auto auto;
    gap: 10px;
+   align-items: center;
 }
 
-/* LOGO */
 .evt-1 {
+   grid-column: 1 / 2;
+   grid-row: 1;
    color: #ff5862;
-   cursor: pointer;
    font-size: 25px;
    font-weight: 800;
    font-family: "Brush Script MT", cursive;
+   cursor: pointer;
 }
 
-/* SEARCH BAR */
 .evt-2 {
+   grid-column: 2 / 3;
+   grid-row: 1;
    display: flex;
    align-items: center;
    gap: 10px;
@@ -56,29 +57,27 @@
    padding: 0 20px;
    border-radius: 25px;
    border: none;
-   display: flex;
-   align-items: center;
-   justify-content: center;
    background-image: linear-gradient(to right, #ff5862, #b92e4f);
    color: white;
    cursor: pointer;
+   white-space: nowrap;
 }
 
-/* RIGHT SECTION */
 .evt-3 {
+   grid-column: 2 / 3;
+   grid-row: 2;
    display: flex;
    justify-content: flex-end;
    align-items: center;
    gap: 10px;
 }
 
-/* BUTTONS */
 .login,
 .reg,
 .book {
    background-color: white;
    height: 35px;
-   padding: 5px 10px;
+   padding: 5px 12px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -122,37 +121,46 @@
 @media (max-width: 992px) {
    .head-containter {
       grid-template-columns: 1fr;
-      gap: 15px;
    }
 
    .evt-1 {
+      grid-column: 1;
       text-align: center;
    }
 
    .evt-2 {
+      grid-column: 1;
       width: 100%;
    }
 
    .evt-3 {
+      grid-column: 1;
       justify-content: flex-end;
       flex-wrap: wrap;
    }
 }
 
+
 @media (max-width: 576px) {
+   .evt-1 {
+      font-size: 20px;
+   }
+
+   .evt-2 {
+      flex-direction: column;
+      gap: 8px;
+   }
+
    .input-1 {
+      width: 100%;
       height: 35px;
       font-size: 14px;
    }
 
    .btn-search {
+      width: 100%;
       height: 35px;
-      padding: 0 12px;
       font-size: 14px;
-   }
-
-   .evt-1 {
-      font-size: 20px;
    }
 
    .evt-3 {
