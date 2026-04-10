@@ -8,111 +8,106 @@
 /* HEADER */
 .parent-head {
    width: 100%;
-   padding: 10px 15px;
+   padding: 10px;
    background-color: whitesmoke;
    box-shadow: 2px 2px 5px 4px lightgray;
    border-radius: 7px;
 }
 
-/* CONTAINER */
+/* MAIN GRID */
 .head-containter {
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   align-items: center;
 }
 
-/* TOP ROW */
+/* LOGO */
 .evt-1 {
    color: #ff5862;
    cursor: pointer;
-   font-size: 24px;
+   font-size: 25px;
    font-weight: 800;
    font-family: "Brush Script MT", cursive;
-   text-align: center;
 }
 
-/* SEARCH SECTION */
+/* SEARCH */
 .evt-2 {
-   width: 100%;
    display: flex;
-   justify-content: center;
    align-items: center;
    position: relative;
-   /* முக்கியம் */
-   gap: 10px;
+   justify-content: center;
 }
 
-/* INPUT */
 .input-1 {
-   width: 70%;
-   max-width: 350px;
    height: 35px;
+   width: 280px;
    border-radius: 25px;
    border: none;
-   padding: 10px 15px;
+   padding: 10px;
    box-shadow: 2px 2px 5px 4px lightgray;
 }
 
-/* SEARCH BUTTON */
-.btn-search {
-   height: 35px;
-   padding: 0 15px;
-   border-radius: 25px;
-   border: none;
-   background-image: linear-gradient(to right, #ff5862, #b92e4f);
-   color: white;
-   cursor: pointer;
+.input-1:focus {
+   outline: none;
 }
 
-/* BOTTOM ROW */
+.btn-search {
+   height: 35px;
+   width: 90px;
+   border-radius: 25px;
+   border: none;
+   margin-left: -40px;
+   background-image: linear-gradient(to right, #ff5862, #b92e4f);
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* RIGHT SIDE */
 .evt-3 {
    display: flex;
    justify-content: flex-end;
    align-items: center;
    gap: 10px;
-   flex-wrap: wrap;
 }
 
-/* BUTTONS */
 .login,
 .reg,
 .book {
    background-color: white;
-   height: 35px;
+   height: 32px;
    padding: 5px 12px;
    display: flex;
    justify-content: center;
    align-items: center;
    border-radius: 7px;
-   cursor: pointer;
    white-space: nowrap;
 }
 
-/* HOVER */
 .login:hover,
 .reg:hover,
 .book:hover {
    border: 1px solid black;
+   cursor: pointer;
 }
 
-/* SEARCH DROPDOWN FIX */
+/* SEARCH DROPDOWN */
 .search-results {
    position: absolute;
    top: 45px;
    left: 50%;
    transform: translateX(-50%);
-   width: 70%;
-   max-width: 350px;
+   width: 280px;
    background: white;
    border: 1px solid #ddd;
    border-radius: 9px;
-   max-height: 200px;
+   max-height: 180px;
    overflow-y: auto;
-   z-index: 999;
+   z-index: 1000;
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* ITEMS */
 .search-item {
    padding: 10px;
    cursor: pointer;
@@ -123,62 +118,71 @@
    background-color: #f5f5f5;
 }
 
+/* BUTTON ANIMATION */
+button {
+   transition: all 0.3s ease;
+}
+
+button:hover {
+   transform: scale(1.05);
+}
+
+.parent-head:hover {
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 /* ========================= */
-/* 📱 MOBILE RESPONSIVE */
+/* 📱 MOBILE RESPONSIVE ONLY */
 /* ========================= */
 
 @media (max-width: 768px) {
 
-   .evt-1 {
-      font-size: 20px;
-   }
-
-   .input-1 {
-      width: 65%;
-   }
-
-   .btn-search {
-      padding: 0 10px;
-   }
-
-   .evt-3 {
-      justify-content: center;
-   }
-
-   .search-results {
-      width: 90%;
-   }
-}
-
-/* EXTRA SMALL */
-@media (max-width: 480px) {
-
-   .evt-2 {
+   .head-containter {
+      display: flex;
       flex-direction: column;
+      align-items: center;
+      gap: 12px;
+   }
+
+   /* LOGO TOP */
+   .evt-1 {
+      width: 100%;
+      text-align: center;
+      font-size: 22px;
+   }
+
+   /* SEARCH CENTER */
+   .evt-2 {
+      width: 100%;
+      display: flex;
+      justify-content: center;
       gap: 8px;
    }
 
    .input-1 {
-      width: 100%;
+      width: 70%;
    }
 
    .btn-search {
-      width: 100%;
+      width: 25%;
+      margin-left: 0;
    }
 
+   /* BOTTOM ROW */
    .evt-3 {
-      flex-direction: column;
-      align-items: center;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
    }
 
-   .login,
-   .reg,
    .book {
-      width: 100%;
+      font-size: 14px;
    }
 
+   /* SEARCH DROPDOWN FIX */
    .search-results {
-      width: 100%;
-      top: 80px;
+      top: 110px;
+      width: 90%;
    }
 }
