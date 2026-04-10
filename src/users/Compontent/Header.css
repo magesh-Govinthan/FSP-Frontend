@@ -173,20 +173,17 @@
 .parent-head:hover {
    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-/* ================= MOBILE (max 768px) ================= */
-@media (max-width: 768px) {
-
+/* 🔹 Tablet (≤ 992px) */
+@media (max-width: 992px) {
    .head-containter {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: auto;
+      grid-template-columns: 1fr;
       gap: 10px;
+      height: auto;
+      text-align: center;
    }
 
    .evt-1 {
       width: 100%;
-      text-align: center;
       font-size: 22px;
    }
 
@@ -200,92 +197,74 @@
    }
 
    .btn-search {
-      width: 25%;
+      width: 80px;
       margin-left: 5px;
    }
 
    .evt-3 {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       width: 100%;
-      height: auto;
-      gap: 10px;
-   }
-
-   .login,
-   .reg,
-   .book {
-      width: 45%;
+      grid-template-columns: repeat(3, auto);
+      justify-content: center;
    }
 
    .search-results {
       left: 50%;
       transform: translateX(-50%);
-      width: 90%;
+      width: 70%;
    }
 }
 
 
-@media (max-width: 480px) {
+/* 🔹 Mobile (≤ 576px) */
+@media (max-width: 576px) {
+   .parent-head {
+      height: auto;
+      padding: 15px 10px;
+   }
+
+   .head-containter {
+      grid-template-columns: 1fr;
+      gap: 12px;
+   }
 
    .evt-1 {
-      font-size: 18px;
+      font-size: 20px;
+      text-align: center;
+   }
+
+   .evt-2 {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
    }
 
    .input-1 {
-      width: 65%;
-      height: 28px;
+      width: 100%;
    }
 
    .btn-search {
-      width: 30%;
-      height: 28px;
-      font-size: 12px;
+      width: 100%;
+      margin-left: 0;
+   }
+
+   .evt-3 {
+      grid-template-columns: repeat(2, auto);
+      gap: 10px;
+      justify-content: center;
    }
 
    .login,
    .reg,
    .book {
-      width: 100%;
-   }
-
-   .evt-3 {
-      flex-direction: column;
-      align-items: center;
+      width: 90px;
+      font-size: 14px;
    }
 
    .search-results {
-      width: 95%;
-      top: 45px;
-   }
-}
-
-
-@media (min-width: 769px) and (max-width: 1024px) {
-
-   .head-containter {
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-   }
-
-   .evt-3 {
-      grid-column: span 2;
-      justify-content: center;
-      display: flex;
-      gap: 10px;
-   }
-
-   .evt-2 {
+      position: static;
       width: 100%;
-      justify-content: center;
-   }
-
-   .input-1 {
-      width: 70%;
-   }
-
-   .btn-search {
-      width: 25%;
+      margin-top: 5px;
+      transform: none;
    }
 }
