@@ -23,9 +23,7 @@ function MyBookings() {
         .get(
           `https://msp-backend-cdho.onrender.com/api/ticket/mytickets/${user._id}`,
           {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
+            headers: { Authorization: `Bearer ${token}` },
           },
         )
         .then((response) => {
@@ -83,7 +81,7 @@ function MyBookings() {
       setCancelTicket((prev) => !prev);
       setToastMessage(data.message || "Ticket transferred successfully");
       setShowToast(true);
-    } catch {
+    } catch (error) {
       setToastMessage("Transfer failed");
       setShowToast(true);
     }
@@ -96,7 +94,11 @@ function MyBookings() {
   return (
     <>
       {/* Toast */}
-      <ToastContainer position="top-end" className="p-3">
+      <ToastContainer
+        position="top-end"
+        className="p-3"
+        style={{ position: "fixed" }}
+      >
         <Toast
           show={showToast}
           onClose={() => setShowToast(false)}
@@ -104,11 +106,11 @@ function MyBookings() {
           autohide
           bg="success"
         >
-          <Toast.Body className="text-white">{toastMessage}</Toast.Body>
+          <Toast.Body style={{ color: "#fff" }}>{toastMessage}</Toast.Body>
         </Toast>
       </ToastContainer>
 
-      {/* Modal */}
+      {/* Transfer Modal */}
       <Modal
         show={showTransferModal}
         onHide={() => setShowTransferModal(false)}
@@ -116,7 +118,6 @@ function MyBookings() {
         <Modal.Header closeButton>
           <Modal.Title>Transfer Ticket</Modal.Title>
         </Modal.Header>
-
         <Modal.Body>
           <Form>
             <Form.Group>
@@ -130,7 +131,6 @@ function MyBookings() {
             </Form.Group>
           </Form>
         </Modal.Body>
-
         <Modal.Footer>
           <Button
             variant="secondary"
@@ -149,98 +149,87 @@ function MyBookings() {
       </Modal>
 
       {/* Payment Button */}
-      <Button
-        variant="success"
-        className="d-block mx-auto mt-4 mb-4"
-        onClick={handlePaymentSubmit}
-      >
-        Payment Info
-      </Button>
-
-      {/* No Data */}
-      {bookings.length === 0 ? (
-        <div className="text-center mt-4 text-muted">No tickets found.</div>
-      ) : (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "1rem",
-            padding: "0 10px",
-          }}
+      <div className="container text-center">
+        <Button
+          variant="success"
+          className="mt-4 mb-4"
+          onClick={handlePaymentSubmit}
         >
-          {bookings.map((ticket) => (
-            <div
-              key={uuidv4()}
-              style={{
-                maxWidth: 360,
-                width: "100%",
-                margin: "1rem auto",
-                borderRadius: 20,
-                backgroundColor: "#fff",
-                boxShadow: "0 4px 12px rgb(0 0 0 / 0.1)",
-                overflow: "hidden",
-              }}
-            >
-              <img
-                src="https://media.gettyimages.com/id/1285337858/vector/ticket-admit-one.jpg"
-                alt=""
-                style={{
-                  width: "100%",
-                  height: 160,
-                  objectFit: "cover",
-                }}
-              />
+          Payment Info
+        </Button>
+      </div>
 
-              <div style={{ padding: "1.2rem" }}>
-                <h5>{ticket.event.eventName}</h5>
-
-                <p>
-                  <b>Date:</b>{" "}
-                  {new Date(ticket.event.date).toLocaleDateString()}
-                </p>
-
-                <p>
-                  <b>Type:</b> {ticket.ticketType}
-                </p>
-
-                <p>
-                  <b>Qty:</b> {ticket.quantity}
-                </p>
-
-                <p>
-                  <b>Status:</b>{" "}
-                  <span
+      {/* Empty State */}
+      {bookings.length === 0 ? (
+        <div style={{ textAlign: "center", marginTop: "2rem", color: "#555" }}>
+          No tickets found.
+        </div>
+      ) : (
+        <div className="container">
+          <div className="row">
+            {bookings.map((ticket) => (
+              <div key={uuidv4()} className="col-12 col-sm-6 col-md-4 mb-4">
+                <div
+                  style={{
+                    width: "100%",
+                    borderRadius: 20,
+                    backgroundColor: "#fff",
+                    boxShadow: "0 4px 12px rgb(0 0 0 / 0.1)",
+                    overflow: "hidden",
+                  }}
+                >
+                  {/* Image */}
+                  <img
+                    src="https://media.gettyimages.com/id/1285337858/vector/ticket-admit-one.jpg?s=612x612&w=0&k=20&c=XpPzIHGrcy2jDa8v_9oBRenQCiD658WhqbruoTbA130="
+                    alt={ticket.event.eventName}
                     style={{
-                      color:
-                        ticket.bookingStatus === "booked" ? "green" : "red",
+                      width: "100%",
+                      height: "180px",
+                      objectFit: "cover",
                     }}
-                  >
-                    {ticket.bookingStatus}
-                  </span>
-                </p>
+                  />
 
-                {/* Buttons */}
-                <div className="d-flex gap-2">
-                  <button
-                    className="btn btn-primary w-100"
-                    disabled={ticket.paymentStatus !== "paid"}
-                    onClick={() => openTransferModal(ticket._id)}
-                  >
-                    Transfer
-                  </button>
+                  {/* Content */}
+                  <div style={{ padding: "1.2rem" }}>
+                    <h5>{ticket.event.eventName}</h5>
 
-                  <button
-                    className="btn btn-danger w-100"
-                    disabled={ticket.paymentStatus !== "paid"}
-                    onClick={() => handleCancel(ticket._id)}
-                  >
-                    Cancel
-                  </button>
+                    <p>
+                      <strong>Date:</strong>{" "}
+                      {new Date(ticket.event.date).toLocaleDateString()}
+                    </p>
+                    <p>
+                      <strong>Type:</strong> {ticket.ticketType}
+                    </p>
+                    <p>
+                      <strong>Qty:</strong> {ticket.quantity}
+                    </p>
+                    <p>
+                      <strong>Status:</strong> {ticket.bookingStatus}
+                    </p>
+
+                    {/* Buttons */}
+                    <div className="d-flex gap-2 mt-3">
+                      <button
+                        className="btn btn-primary w-50"
+                        disabled={ticket.paymentStatus !== "paid"}
+                        onClick={() => openTransferModal(ticket._id)}
+                      >
+                        Transfer
+                      </button>
+
+                      <button
+                        className="btn btn-danger w-50"
+                        disabled={ticket.paymentStatus !== "paid"}
+                        onClick={() => handleCancel(ticket._id)}
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       )}
     </>
