@@ -9,6 +9,12 @@
     padding: 10px;
 }
 
+.upcoming{
+    display: flex;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 1rem;
+}
+
 /* CARD */
 .home-1 {
     display: flex;
