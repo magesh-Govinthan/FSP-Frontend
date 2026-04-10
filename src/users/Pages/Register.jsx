@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Form, Button, Card, Container, Row, Col, Alert } from "react-bootstrap";
+import {
+  Form,
+  Button,
+  Card,
+  Container,
+  Row,
+  Col,
+  Alert,
+} from "react-bootstrap";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -9,40 +17,46 @@ const Register = () => {
     email: "",
     phone: "",
     password: "",
-    role: 'user'
+    role: "user",
   });
+
   const [notification, setNotification] = useState({
     message: "",
-    variant: "" 
+    variant: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
-  const navigate = useNavigate();
 
   const sendPostRequest = async (formData) => {
     try {
       const response = await axios.post(
-        "https://msp-backend-cdho.onrender.com/api/user/register", // api end point
-        {
-          ...formData,
-        }
+        "https://msp-backend-cdho.onrender.com/api/user/register",
+        { ...formData },
       );
-      if(response.data){
-        setNotification({ message: response.data.message, variant: "success" });
+
+      if (response.data) {
+        setNotification({
+          message: response.data.message,
+          variant: "success",
+        });
+
         setTimeout(() => {
-          navigate('/login');
-       }, 2000)
+          navigate("/login");
+        }, 2000);
       }
     } catch (error) {
       console.error("Error:", error.response?.data || error.message);
+
       setNotification({
         message: "Registration failed",
-        variant: "danger"
+        variant: "danger",
       });
     }
   };
@@ -53,12 +67,16 @@ const Register = () => {
   };
 
   return (
-    <Container className="d-flex align-items-center justify-content-center vh-100">
-      <Row>
-        <Col>
-          <Card style={{ width: "32rem" }} className="p-4 shadow">
-            <Card.Body style={{ width: "28rem" }}>
+    <Container
+      fluid
+      className="d-flex align-items-center justify-content-center min-vh-100 px-3"
+    >
+      <Row className="w-100 justify-content-center">
+        <Col xs={12} sm={10} md={8} lg={5}>
+          <Card className="p-3 p-md-4 shadow w-100">
+            <Card.Body>
               <h3 className="text-center mb-4">Register</h3>
+
               {notification.message && (
                 <Alert
                   variant={notification.variant}
@@ -68,6 +86,7 @@ const Register = () => {
                   {notification.message}
                 </Alert>
               )}
+
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
                   <Form.Label>Full Name</Form.Label>
@@ -96,7 +115,7 @@ const Register = () => {
                 <Form.Group className="mb-3">
                   <Form.Label>Phone Number</Form.Label>
                   <Form.Control
-                    type="phone"
+                    type="tel"
                     placeholder="Enter phone number"
                     name="phone"
                     value={formData.phoneNumber}
