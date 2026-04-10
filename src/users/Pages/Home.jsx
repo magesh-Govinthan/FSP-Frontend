@@ -41,6 +41,7 @@ function FilterBar({
           style={{
             display: "flex",
             flexDirection: "column",
+            justifyContent:"center",
             cursor: "pointer",
           }}
         >
