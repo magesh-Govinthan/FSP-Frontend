@@ -75,7 +75,10 @@
         grid-template-columns: 1fr;
         gap: 15px;
     }
-
+   .upcoming{
+    grid-template-columns: 1fr;
+        gap: 15px;
+   }
     .home-1 {
         max-width: 100%;
     }

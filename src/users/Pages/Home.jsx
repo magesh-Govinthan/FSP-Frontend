@@ -405,6 +405,7 @@ function Home() {
           gridTemplateColumns: "1fr 1fr 1fr",
           gap: "1rem",
         }}
+        className="upcoming"
       >
         {filteredEvents.length > 0 ? (
           filteredEvents.map((evt, id) => (
