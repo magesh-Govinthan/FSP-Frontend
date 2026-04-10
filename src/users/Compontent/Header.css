@@ -5,7 +5,6 @@
    box-sizing: border-box;
 }
 
-/* HEADER */
 .parent-head {
    width: 100%;
    padding: 10px;
@@ -14,14 +13,12 @@
    border-radius: 7px;
 }
 
-/* MAIN GRID */
 .head-containter {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
    align-items: center;
 }
 
-/* LOGO */
 .evt-1 {
    color: #ff5862;
    cursor: pointer;
@@ -30,7 +27,6 @@
    font-family: "Brush Script MT", cursive;
 }
 
-/* SEARCH */
 .evt-2 {
    display: flex;
    align-items: center;
@@ -131,9 +127,6 @@ button:hover {
    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* ========================= */
-/* 📱 MOBILE RESPONSIVE ONLY */
-/* ========================= */
 
 @media (max-width: 768px) {
 
@@ -144,14 +137,12 @@ button:hover {
       gap: 12px;
    }
 
-   /* LOGO TOP */
    .evt-1 {
       width: 100%;
       text-align: center;
       font-size: 22px;
    }
 
-   /* SEARCH CENTER */
    .evt-2 {
       width: 100%;
       display: flex;
@@ -168,7 +159,6 @@ button:hover {
       margin-left: 0;
    }
 
-   /* BOTTOM ROW */
    .evt-3 {
       width: 100%;
       display: flex;
@@ -180,7 +170,6 @@ button:hover {
       font-size: 14px;
    }
 
-   /* SEARCH DROPDOWN FIX */
    .search-results {
       top: 110px;
       width: 90%;
