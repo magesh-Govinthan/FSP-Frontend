@@ -104,6 +104,7 @@
 }
 .filter-bar {
     display: flex;
+    text-align: center;
     gap: 1.5rem;
     align-items: flex-end;
 }
