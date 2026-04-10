@@ -28,7 +28,7 @@
   position: absolute;
   left: 20px;
   border: none;
-
+ 
   height: 40px;
   width: 20px;
   font-size: 20px;
@@ -68,6 +68,7 @@
   font-size: 20px;
   width: 200px;
   border-radius: 25px;
+  margin:0;
 
 
 }
