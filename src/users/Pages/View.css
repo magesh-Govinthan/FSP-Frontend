@@ -316,3 +316,101 @@ ul {
 .img-child2:hover img {
   transform: scale(1.05);
 }
+
+@media (max-width: 992px) {
+
+  .view-1 {
+    width: 100%;
+  }
+
+  .evt-sec {
+    width: 100%;
+  }
+
+  .evt-fac {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: auto;
+  }
+
+  .evt-loc {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cncl-1,
+  .cncl-2 {
+    width: 100%;
+  }
+
+  .img-child2 img {
+    height: 350px;
+  }
+}
+
+
+@media (max-width: 576px) {
+
+  .view-head {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  .view-1 {
+    width: 100%;
+  }
+
+  .img-child2 img {
+    height: 220px;
+  }
+
+  .btn-2 {
+    width: 100%;
+    right: 0;
+    font-size: 16px;
+    height: 45px;
+  }
+
+  .holi-1,
+  .holi-2,
+  .holi-3,
+  .holi-4,
+  .holi-6 {
+    height: auto;
+    padding: 10px;
+  }
+
+  .evt-sec {
+    width: 100%;
+  }
+
+  .evt-fac {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .evt-fac1 {
+    width: 100%;
+  }
+
+  .evt-fac3 {
+    white-space: normal;
+  }
+
+  .evt-loc {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .cncl-1,
+  .cncl-2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .btn-3 {
+    left: 10px;
+  }
+}
