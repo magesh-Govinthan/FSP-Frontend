@@ -81,15 +81,30 @@
         grid-template-columns: 1fr;
         gap: 15px;
     }
-   .upcoming{
-    grid-template-columns: 1fr;
-        gap: 15px;
-   }
-    .home-1 {
+       .home-1 {
         max-width: 100%;
     }
 
     .img-child {
         height: 180px;
+    }
+}
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .event-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .event-grid {
+        grid-template-columns: 1fr;
     }
 }

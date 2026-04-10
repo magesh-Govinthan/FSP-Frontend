@@ -399,10 +399,7 @@ function Home() {
         />
       </div>
 
-      <div
-       
-        className="upcoming"
-      >
+      <div className="event-grid">
         {filteredEvents.length > 0 ? (
           filteredEvents.map((evt, id) => (
             <div
