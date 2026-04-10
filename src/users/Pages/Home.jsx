@@ -384,6 +384,7 @@ function Home() {
 
       {/* ---------------- Upcoming Events ---------------- */}
       <div
+        className="events-header"
         style={{ display: "flex", alignItems: "center", marginBottom: "3rem" }}
       >
         <h2 style={{ marginLeft: 0 }}>Upcoming Events</h2>
