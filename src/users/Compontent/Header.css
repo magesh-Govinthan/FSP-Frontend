@@ -173,6 +173,7 @@
 .parent-head:hover {
    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+/* ================= MOBILE (max 768px) ================= */
 @media (max-width: 768px) {
 
    .head-containter {
