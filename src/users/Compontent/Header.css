@@ -1,38 +1,48 @@
+/* RESET (your requirement) */
 * {
    margin: 0 auto;
    padding: 0;
    box-sizing: border-box;
 }
 
+/* 🔥 FIX auto-centering issue */
+.parent-head,
+.head-containter,
+.evt-1,
+.evt-2,
+.evt-3,
+.search-results {
+   margin: 0 !important;
+}
+
+/* HEADER CONTAINER */
 .parent-head {
    width: 100%;
-   padding: 10px 20px;
+   padding: 10px;
    background-color: whitesmoke;
    box-shadow: 2px 2px 5px 4px lightgray;
    border-radius: 7px;
 }
 
+/* MAIN FLEX */
 .head-containter {
-   display: grid;
-   grid-template-columns: 1fr 2fr;
-   grid-template-rows: auto auto;
-   gap: 10px;
+   display: flex;
+   justify-content: space-between;
    align-items: center;
+   flex-wrap: wrap;
 }
 
+/* LOGO */
 .evt-1 {
-   grid-column: 1 / 2;
-   grid-row: 1;
    color: #ff5862;
+   cursor: pointer;
    font-size: 25px;
    font-weight: 800;
    font-family: "Brush Script MT", cursive;
-   cursor: pointer;
 }
 
+/* SEARCH BAR */
 .evt-2 {
-   grid-column: 2 / 3;
-   grid-row: 1;
    display: flex;
    align-items: center;
    gap: 10px;
@@ -40,11 +50,11 @@
 }
 
 .input-1 {
-   flex: 1;
-   height: 38px;
+   height: 35px;
+   width: 300px;
    border-radius: 25px;
    border: none;
-   padding: 10px 15px;
+   padding: 10px;
    box-shadow: 2px 2px 5px 4px lightgray;
 }
 
@@ -52,44 +62,46 @@
    outline: none;
 }
 
+/* SEARCH BUTTON */
 .btn-search {
-   height: 38px;
-   padding: 0 20px;
+   height: 35px;
+   width: 90px;
    border-radius: 25px;
    border: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
    background-image: linear-gradient(to right, #ff5862, #b92e4f);
    color: white;
    cursor: pointer;
-   white-space: nowrap;
 }
 
+/* RIGHT SECTION */
 .evt-3 {
-   grid-column: 2 / 3;
-   grid-row: 2;
    display: flex;
-   justify-content: flex-end;
    align-items: center;
    gap: 10px;
 }
 
+/* BUTTONS */
 .login,
 .reg,
 .book {
    background-color: white;
    height: 35px;
-   padding: 5px 12px;
+   padding: 5px 10px;
    display: flex;
    justify-content: center;
    align-items: center;
+   width: 100px;
    border-radius: 7px;
-   cursor: pointer;
-   white-space: nowrap;
 }
 
 .login:hover,
 .reg:hover,
 .book:hover {
    border: 0.8px solid black;
+   cursor: pointer;
 }
 
 /* SEARCH DROPDOWN */
@@ -97,13 +109,14 @@
    position: absolute;
    top: 45px;
    left: 0;
-   width: 100%;
+   width: 300px;
    background: white;
    border: 1px solid #ddd;
    border-radius: 9px;
    max-height: 180px;
    overflow-y: auto;
    z-index: 1000;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-item {
@@ -116,54 +129,97 @@
    background-color: #f5f5f5;
 }
 
+/* BUTTON ANIMATION */
+button {
+   transition: all 0.3s ease;
+}
 
+button:hover {
+   transform: scale(1.05);
+}
 
-@media (max-width: 992px) {
+/* HEADER HOVER */
+.parent-head {
+   transition: all 0.3s ease;
+}
+
+.parent-head:hover {
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================= */
+/* 📱 TABLET RESPONSIVE */
+/* ========================= */
+@media (max-width: 768px) {
    .head-containter {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
    }
 
+   /* Top Row */
    .evt-1 {
-      grid-column: 1;
       text-align: center;
    }
 
    .evt-2 {
-      grid-column: 1;
       width: 100%;
+      justify-content: center;
    }
 
+   .input-1 {
+      width: 70%;
+   }
+
+   .btn-search {
+      width: 30%;
+   }
+
+   /* Bottom Row */
    .evt-3 {
-      grid-column: 1;
+      width: 100%;
       justify-content: flex-end;
-      flex-wrap: wrap;
+   }
+
+   .search-results {
+      width: 100%;
    }
 }
 
-
-@media (max-width: 576px) {
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+@media (max-width: 480px) {
    .evt-1 {
-      font-size: 20px;
+      text-align: center;
+      font-size: 22px;
    }
 
    .evt-2 {
       flex-direction: column;
-      gap: 8px;
-   }
-
-   .input-1 {
+      align-items: stretch;
       width: 100%;
-      height: 35px;
-      font-size: 14px;
    }
 
+   .input-1,
    .btn-search {
       width: 100%;
-      height: 35px;
-      font-size: 14px;
    }
 
    .evt-3 {
+      width: 100%;
       justify-content: space-between;
+      flex-wrap: wrap;
+   }
+
+   .login,
+   .reg,
+   .book {
+      width: 48%;
+   }
+
+   .search-results {
+      width: 100%;
+      left: 0;
    }
 }
