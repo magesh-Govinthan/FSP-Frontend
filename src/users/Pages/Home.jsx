@@ -34,24 +34,8 @@ function FilterBar({
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: "1.5rem",
-        alignItems: "flex-end",
-        fontSize: "14px",
-        fontWeight: "600",
-        color: "#444",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "1rem",
-          cursor: "pointer",
-        }}
-      >
+    <div className="filter-bar">
+      <div className="filter-bar-child">
         {/* Category */}
         <label
           style={{
@@ -138,7 +122,7 @@ function FilterBar({
             display: "flex",
             alignItems: "flex-end",
             height: "40px",
-            width: "100px",
+            width: "120px",
           }}
         >
           Clear All
@@ -383,9 +367,7 @@ function Home() {
       </div>
 
       {/* ---------------- Upcoming Events ---------------- */}
-      <div
-        style={{ display: "flex", alignItems: "center", marginBottom: "3rem" }}
-      >
+      <div className="upcoming-header">
         <h2 style={{ marginLeft: 0 }}>Upcoming Events</h2>
         <FilterBar
           filterDate={filterDate}
