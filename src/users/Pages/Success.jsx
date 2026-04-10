@@ -178,7 +178,7 @@ export default function PaymentSuccess() {
         </InputGroup>
 
       </Container>
-      <Container style={{ width: "800px", placeItems: "center", marginTop: '3rem' }} className="d-flex justify-content-center">
+      <Container  className="d-flex justify-content-center btn-back">
         <Button variant="info" onClick={handleNavigate}>
           Back to Home
         </Button>
