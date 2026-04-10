@@ -1,91 +1,76 @@
-/* RESET (your requirement) */
 * {
+   max-width: 1300px;
    margin: 0 auto;
    padding: 0;
    box-sizing: border-box;
 }
 
-/* 🔥 FIX unwanted auto-centering */
-.parent-head,
-.head-containter,
-.evt-1,
-.evt-2,
-.evt-3,
-.search-results {
-   margin: 0 !important;
-}
-
 /* HEADER */
 .parent-head {
    width: 100%;
-   padding: 10px;
+   padding: 10px 15px;
    background-color: whitesmoke;
    box-shadow: 2px 2px 5px 4px lightgray;
    border-radius: 7px;
 }
 
-/* MAIN LAYOUT */
+/* CONTAINER */
 .head-containter {
    display: flex;
-   justify-content: space-between;
-   align-items: center;
-   flex-wrap: wrap;
+   flex-direction: column;
+   gap: 10px;
 }
 
-/* LOGO */
+/* TOP ROW */
 .evt-1 {
    color: #ff5862;
    cursor: pointer;
-   font-size: 25px;
+   font-size: 24px;
    font-weight: 800;
    font-family: "Brush Script MT", cursive;
+   text-align: center;
 }
 
 /* SEARCH SECTION */
 .evt-2 {
+   width: 100%;
    display: flex;
+   justify-content: center;
    align-items: center;
-   gap: 10px;
    position: relative;
+   /* முக்கியம் */
+   gap: 10px;
 }
 
 /* INPUT */
 .input-1 {
+   width: 70%;
+   max-width: 350px;
    height: 35px;
-   width: 300px;
    border-radius: 25px;
    border: none;
-   padding: 10px;
+   padding: 10px 15px;
    box-shadow: 2px 2px 5px 4px lightgray;
 }
 
-.input-1:focus {
-   outline: none;
-}
-
-/* BUTTON */
+/* SEARCH BUTTON */
 .btn-search {
    height: 35px;
-   width: 90px;
+   padding: 0 15px;
    border-radius: 25px;
    border: none;
-   display: flex;
-   justify-content: center;
-   align-items: center;
    background-image: linear-gradient(to right, #ff5862, #b92e4f);
    color: white;
    cursor: pointer;
 }
 
-/* RIGHT SIDE */
+/* BOTTOM ROW */
 .evt-3 {
    display: flex;
+   justify-content: flex-end;
    align-items: center;
-   gap: 20px;
-   /* 🔥 more space */
-   margin-left: auto;
-   /* 🔥 push right */
-   padding-right: 10px;
+   gap: 10px;
+   flex-wrap: wrap;
 }
 
 /* BUTTONS */
@@ -98,34 +83,36 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   width: 110px;
    border-radius: 7px;
+   cursor: pointer;
+   white-space: nowrap;
 }
 
+/* HOVER */
 .login:hover,
 .reg:hover,
 .book:hover {
-   border: 0.8px solid black;
-   cursor: pointer;
+   border: 1px solid black;
 }
 
-/* 🔥 SEARCH DROPDOWN CENTER FIX */
+/* SEARCH DROPDOWN FIX */
 .search-results {
    position: absolute;
    top: 45px;
    left: 50%;
    transform: translateX(-50%);
-   width: 100%;
-   max-width: 300px;
+   width: 70%;
+   max-width: 350px;
    background: white;
    border: 1px solid #ddd;
    border-radius: 9px;
-   max-height: 180px;
+   max-height: 200px;
    overflow-y: auto;
-   z-index: 1000;
+   z-index: 999;
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* ITEMS */
 .search-item {
    padding: 10px;
    cursor: pointer;
@@ -136,92 +123,62 @@
    background-color: #f5f5f5;
 }
 
-/* ANIMATION */
-button {
-   transition: all 0.3s ease;
-}
-
-button:hover {
-   transform: scale(1.05);
-}
-
-.parent-head {
-   transition: all 0.3s ease;
-}
-
-.parent-head:hover {
-   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
 /* ========================= */
-/* 📱 TABLET */
+/* 📱 MOBILE RESPONSIVE */
 /* ========================= */
+
 @media (max-width: 768px) {
-   .head-containter {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 10px;
-   }
 
    .evt-1 {
-      text-align: center;
-   }
-
-   .evt-2 {
-      width: 100%;
-      justify-content: center;
+      font-size: 20px;
    }
 
    .input-1 {
-      width: 70%;
+      width: 65%;
    }
 
    .btn-search {
-      width: 30%;
+      padding: 0 10px;
    }
 
    .evt-3 {
-      width: 100%;
-      justify-content: flex-end;
+      justify-content: center;
    }
 
    .search-results {
-      max-width: 70%;
+      width: 90%;
    }
 }
 
-/* ========================= */
-/* 📱 MOBILE */
-/* ========================= */
+/* EXTRA SMALL */
 @media (max-width: 480px) {
-   .evt-1 {
-      text-align: center;
-      font-size: 22px;
-   }
 
    .evt-2 {
       flex-direction: column;
+      gap: 8px;
+   }
+
+   .input-1 {
       width: 100%;
    }
 
-   .input-1,
    .btn-search {
       width: 100%;
    }
 
    .evt-3 {
-      width: 100%;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
    }
 
    .login,
    .reg,
    .book {
-      width: 48%;
+      width: 100%;
    }
 
    .search-results {
-      max-width: 100%;
+      width: 100%;
+      top: 80px;
    }
 }
