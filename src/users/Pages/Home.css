@@ -1,55 +1,50 @@
-/* ===== Existing Styles ===== */
-
-.parent-Home {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    margin-top: 50px;
+.parent-Home{
+  
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:20px;
+    margin-top:50px;
 }
-
-.home-1 {
-    display: flex;
-    align-items: start;
-    justify-content: start;
+.home-1{
+    display:flex;
+    align-items:start;
+    justify-content:start;
     flex-direction: column;
-    height: auto;
-    width: 400px;
+    height:auto;
+    width:400px;
     margin: 0;
-    border-radius: 25px;
-    border: 2px solid whitesmoke;
-    padding: 10px;
+    border-radius:25px;
+    border:2px solid whitesmoke;
+    padding:10px;
     background-color: white;
 }
-
-.img-child {
-    width: 380px;
-    border-radius: 15px;
-    height: 200px;
+.img-child{
+  width:380px; 
+      border-radius:15px;
+      height:200px;
+}
+ .img-child img{
+     width:380px; 
+      border-radius:15px;
+      height:200px;
 }
 
-.img-child img {
-    width: 380px;
-    border-radius: 15px;
-    height: 200px;
-}
-
-.time {
+.time{
     display: flex;
     align-items: center;
-    justify-content: start;
-    gap: 2px;
-    height: 30px;
-}
+    justify-content:start;
+    gap:2px;
+    height:30px;
+    
 
-.loc {
-    display: flex;
+}
+.loc{
+     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    height: 30px;
+    gap:5px;
+    height:30px;
 }
-
-/* Card Hover Effect */
 .home-1 {
     border-radius: 12px;
     overflow: hidden;
@@ -60,96 +55,4 @@
 .home-1:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* ===== Events Header (add this if not already) ===== */
-
-.events-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-    padding: 0 20px;
-}
-
-/* ===== Tablet View ===== */
-
-@media (max-width: 992px) {
-
-    .parent-Home {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        justify-items: center;
-    }
-
-    .home-1 {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .img-child,
-    .img-child img {
-        width: 100%;
-        height: 180px;
-    }
-
-    .events-header {
-        flex-direction: row;
-        gap: 10px;
-    }
-}
-
-/* ===== Mobile View ===== */
-
-@media (max-width: 576px) {
-
-    /* Header + Filter */
-    .events-header {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-        padding: 0 10px;
-    }
-
-    .events-header h2 {
-        font-size: 18px;
-        text-align: center;
-    }
-
-    .events-header select,
-    .events-header button {
-        width: 100%;
-    }
-
-    /* Cards Layout */
-    .parent-Home {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        margin-top: 20px;
-        padding: 0 10px;
-        justify-items: center;
-    }
-
-    .home-1 {
-        width: 100%;
-        max-width: 100%;
-        padding: 10px;
-    }
-
-    /* Image Fix */
-    .img-child,
-    .img-child img {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-    }
-
-    /* Text Sections */
-    .time,
-    .loc {
-        flex-wrap: wrap;
-        font-size: 14px;
-        gap: 5px;
-        justify-content: flex-start;
-    }
 }
